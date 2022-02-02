@@ -1,15 +1,15 @@
 @extends('layouts.public-nav')
 @section('title','Menu')
 @section('content')
-<header class="header-food">
 
-</header>
-<div class="food-intro">
-    <h1 class="food-intro-h1">Menu</h1>
-    <h2 class="food-intro-h2">Istražite okuse</h2>
+
+<div class="banner">
+    <div class="banner-box">
+        <div class="banner-box-inner">
+                <h3>Menu</h3>            
+        </div>
+    </div>
 </div>
-
-
 
 <div class="menu-category">
     @foreach ($section as $section_row)

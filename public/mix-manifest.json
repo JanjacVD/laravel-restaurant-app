@@ -1,5 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/jquery-3.6.0.min.js": "/js/jquery-3.6.0.min.js",
+    "/js/jquery-1.13.1.js": "/js/jquery-1.13.1.js",
     "/css/app.css": "/css/app.css",
+    "/css/main.css": "/css/main.css",
+    "/css/jquery-1.13.1.css": "/css/jquery-1.13.1.css",
     "/css/style.css": "/css/style.css"
 }

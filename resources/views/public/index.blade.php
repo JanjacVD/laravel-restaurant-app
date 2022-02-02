@@ -1,7 +1,9 @@
-<title>Naslovnica | Restoran & Pizzeria Šimun</title>
+@extends('layouts.public-nav')
+@section('title','Naslovnica')
+@section('content')
 
 <!------HEADER-->
-<header class="header">
+<header class="index-header">
     <div class="hero">
         <h1 class="title">RESTORAN & PIZZERIA <br>ŠIMUN</h1>
         @forelse ($time as $row)
@@ -87,3 +89,4 @@
     </div>
 
 </section>
+@endsection

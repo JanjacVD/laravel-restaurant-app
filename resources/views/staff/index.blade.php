@@ -6,7 +6,6 @@
 <a class="btn btn-info btn-sm py-3 px-4"style="margin-top:10px;margin-left:5px;" href="{{ route('register') }}">Dodaj radnika</a>
 <h1 class="text-center p-3 fw-bold">Osoblje</h1>
 
-
 @if (session('status'))
 <div class="alert alert-success" role="alert">
     {{session('status')}}
@@ -32,7 +31,6 @@
         <div class="col-sm">
            {{ $row->name }}
         </div>
-      
         <div class="col-sm">
            {{ $row->username }}
         </div>
