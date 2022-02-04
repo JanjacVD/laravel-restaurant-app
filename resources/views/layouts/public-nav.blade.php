@@ -35,7 +35,7 @@
 					</li>
 					<li class="menu-item"><a href="{{ route('index') }}" class="menu-link">Home</a></li>
 					<li class="menu-item"><a href="{{ route('public.menu') }}" class="menu-link">Menu</a></li>
-					<li class="menu-item"><a href="#" class="menu-link">Book a table</a></li>
+					<li class="menu-item"><a href="{{ route('public.booking') }}" class="menu-link">Book a table</a></li>
 					<li class="menu-item"><a href="#" class="menu-link">Gallery</a></li>
 					<li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
 

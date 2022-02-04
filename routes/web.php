@@ -19,6 +19,8 @@ use App\Http\Controllers\PublicIndexController;
 
 Route::get('/menu', [App\Http\Controllers\PublicIndexController::class, 'menu'])->name('public.menu');
 
+Route::get('/book-a-table', [App\Http\Controllers\PublicIndexController::class, 'booking'])->name('public.booking');
+
 Route::get('/contact', function () {
     return view('public.contact');
 })->name('public.contact');
@@ -26,10 +28,6 @@ Route::get('/contact', function () {
 Route::get('/galery', function () {
     return view('public.galery');
 })->name('public.galery');
-
-Route::get('/book-a-table', function () {
-    return view('public.book-a-table');
-})->name('public.book-a-table');
 
 Auth::routes();
 

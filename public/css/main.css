@@ -36,7 +36,7 @@ body {
     align-items: center;
     justify-content: center;
     color: rgba(255, 255, 255, 0.932);
-    font-size: 3rem;
+    font-size: 3em;
 }
 
 .menu-category {
@@ -46,22 +46,22 @@ body {
 }
 
 .section-title {
-    font-size: 3rem;
+    font-size: 3em;
     font-weight: 900;
-    padding-bottom: 4rem;
+    padding-bottom: 4em;
     font-family: 'EB Garamond', serif;
     text-transform: uppercase;
 
 }
 
 .category-title {
-    font-size: 2.1rem;
+    font-size: 2.1em;
     font-weight: 900;
     font-family: 'Lora', serif;
     text-transform: uppercase;
     display: flex;
     flex-direction: row;
-    padding-bottom: 3rem;
+    padding-bottom: 3em;
 }
 
 .category-title:before,
@@ -81,7 +81,7 @@ body {
 }
 
 .food-title {
-    font-size: 1.7rem;
+    font-size: 1.7em;
     font-weight: 900;
     font-family: 'Lora', serif;
     text-transform: uppercase;
@@ -89,7 +89,7 @@ body {
 }
 
 .food-price {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     font-weight: 900;
     font-family: 'Lora', serif;
     text-transform: uppercase;
@@ -97,7 +97,7 @@ body {
 }
 
 .food-description {
-    font-size: 1.1rem;
+    font-size: 1.1em;
     font-weight: 900;
     width: 100%;
     text-align: left;
@@ -111,7 +111,7 @@ body {
 }
 
 .food-item {
-    padding-bottom: 2rem;
+    padding-bottom: 2em;
 }
 
 @media screen and (max-width:1100px) {
@@ -123,20 +123,20 @@ body {
     }
 
     .section-title {
-        font-size: 2.3rem;
+        font-size: 2.3em;
         font-weight: 900;
-        padding-bottom: 3.5rem;
+        padding-bottom: 3.5em;
         font-family: 'EB Garamond', serif;
         text-transform: uppercase;
 
     }
 
     .category-title {
-        font-size: 1.8rem;
+        font-size: 1.8em;
         font-weight: 900;
         font-family: 'Lora', serif;
         text-transform: uppercase;
-        padding-bottom: 2.3rem;
+        padding-bottom: 2.3em;
     }
 
     .category-title:before,
@@ -155,19 +155,19 @@ body {
     }
 
     .food-title {
-        font-size: 1.5rem;
+        font-size: 1.5em;
         width: 70%;
         font-weight: 900;
         text-align: left;
         font-family: 'Lora', serif;
         text-transform: uppercase;
-        padding-bottom: 0.8rem;
+        padding-bottom: 0.8em;
         float: left;
     }
 
     .food-price {
         width: 30%;
-        font-size: 1.1rem;
+        font-size: 1.1em;
         font-weight: 900;
         text-align: right;
         font-family: 'Lora', serif;
@@ -176,7 +176,7 @@ body {
     }
 
     .food-description {
-        font-size: 0.8rem;
+        font-size: 1em;
         text-align: left;
         font-weight: 900;
         width: 100%;
@@ -191,7 +191,7 @@ body {
     }
 
     .food-item {
-        padding-bottom: 2rem;
+        padding-bottom: 2em;
     }
 }
 
@@ -217,15 +217,15 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 4rem;
+    padding-bottom: 4em;
 }
 
 .hero .title {
     color: rgb(255, 255, 255, 0.9);
-    font-size: 3rem;
+    font-size: 3em;
     overflow: hidden;
     text-align: center;
-    padding-bottom: 8rem;
+    padding-bottom: 8em;
     margin-top: 20vh;
     font-family: 'Playfair Display SC', serif;
     letter-spacing: 10px;
@@ -233,21 +233,21 @@ body {
 
 .hero .hours {
     color: rgb(255, 255, 255, 0.9);
-    font-size: 1.8rem;
+    font-size: 1.8em;
     font-family: 'Playfair Display SC', serif;
     letter-spacing: 10px;
     text-align: center
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:890px) {
 
 
     .hero .title {
         color: rgb(255, 255, 255, 0.9);
-        font-size: 2.5rem;
+        font-size: 2.5em;
         overflow: hidden;
         text-align: center;
-        padding-bottom: 8rem;
+        padding-bottom: 8em;
         margin-top: 20vh;
         font-family: 'Playfair Display SC', serif;
         letter-spacing: 10px;
@@ -255,19 +255,465 @@ body {
 
     .hero .hours {
         color: rgb(255, 255, 255, 0.9);
-        font-size: 1.4rem;
+        font-size: 1.2em;
         font-family: 'Playfair Display SC', serif;
         letter-spacing: 10px;
         text-align: center
     }
 
     .index-header {
-      background:url("../images/index.jpg") 70% center/cover no-repeat fixed;
+        background: url("../images/index.jpg") 70% center/cover no-repeat fixed;
     }
 }
+
+
 @media screen and (max-width:400px) {
-  html{
-    font-size: 10px;
-  }
+    html {
+        font-size: 10px;
+    }
 }
 
+/*ABOUT US */
+
+/*=======ABOUT US=====*/
+#about {
+    margin: 100px 30px;
+    padding: 5px;
+    width: auto;
+    min-height: 50vh;
+    background-color: white;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image text""info info";
+}
+
+#about img {
+    grid-area: image;
+    width: 98%;
+    height: auto;
+}
+
+.aboutus-box {
+    grid-area: text;
+    margin-top: 1.5rem;
+    width: 98%;
+    font-size: 1.1em;
+    color: black;
+    font-weight: 700;
+    line-height: 3em;
+}
+
+.aboutus-box h2 {
+    padding-bottom: 2rem;
+    font-size: 3em;
+}
+
+.friendly-box {
+    grid-area: info;
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #fbfbfb;
+    border-radius: 10px;
+}
+
+.icon {
+    padding: 50px;
+    font-size: 100%;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.icon i {
+    font-size: 40px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    margin: auto;
+}
+
+.about-btn {
+    padding: 0.5rem 2rem;
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.about-btn:hover {
+    transition: 0.5s;
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+}
+
+@media screen and (max-width:1200px) {
+    #about {
+        grid-template-areas: "image image""text text""info info""info info";
+        text-align: center;
+    }
+
+    .friendly-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:900px) {
+
+    #about {
+        grid-template-areas: "image image""text text""info info""info info""info info";
+        text-align: center;
+    }
+
+    .about-btn {
+        padding: 0.5rem 1.4rem;
+        font-size: 0.7em;
+    }
+
+    .friendly-box {
+        font-size: 0.7em;
+        width: 100%;
+        display: grid;
+        grid-gap: 0.2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    #about {
+        grid-template-areas: "image image""text text""info info""info info""info info""info info""info info""info info";
+        text-align: center;
+    }
+
+    .about-btn {
+        padding: 0.5rem 1.4rem;
+        font-size: 0.7em;
+    }
+
+    .friendly-box {
+        font-size: 0.7em;
+        width: 100%;
+        display: grid;
+        grid-gap: 0.2rem;
+        grid-template-columns: 1fr;
+    }
+}
+
+/*BOOKING*/
+
+
+.booking-body {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    background: url('../images/book.jpg') center/cover no-repeat;
+}
+.booking-title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.8em;
+}
+.booking-form {
+    color: #fff;
+    background: #00000015;
+    padding: 2rem 4rem;
+    margin: auto;
+    width: 60vw;
+    min-height: 63vh;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.booking-form-line {
+    width: 90%;
+}
+.booking-form-line input[type=text],
+input[type=number],
+input[type=email] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding: 0;
+    width: 100%;
+}
+
+.booking-form-line button[type=submit] {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 3rem;
+}
+
+
+.booking-radio {
+    width: 100%;
+    padding: 1rem 2rem;
+}
+.booking-radio-single label{
+    width:85%;
+    text-align: left;
+    padding:0;
+    margin:0;
+}
+.booking-radio-single input{
+    transform: scale(1.5);
+    width:15%;
+    text-align: left;
+    padding:0;
+    margin:0;
+
+}
+.booking-form-line input:focus {
+    outline: none;
+}
+.booking-form-line input{
+    font-size: 1.2em;
+    color:rgb(223, 223, 223);
+}
+@media screen and (max-width:900px) {
+    .booking-form {
+        color: #fff;
+        background: #00000015;
+        padding: 2rem 1rem;
+        margin: auto;
+        width: 60vw;
+        min-height: 60vh;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .booking-radio-single{
+        width: 50%;
+    }
+    .booking-radio-single label{
+        width:80%;
+        text-align: left;
+        padding:0;
+        margin:0;
+    }
+    .booking-radio-single input{
+        transform: scale(1.3);
+        width:20%;
+        text-align: left;
+        padding:0 1rem;
+        margin:0;
+    
+    }
+}
+/*FOOTER*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+
+footer {
+    position: relative;
+    bottom: 0;
+    font-family: 'Playfair Display SC', serif;
+
+}
+
+.footer-distributed {
+    background-color: #1c1c1c;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px;
+    padding: 55px 50px;
+    margin-top: 0;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-left {
+    width: 40%;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+}
+
+.footer-distributed h3 span {
+    color: #5383d3;
+}
+
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: #5383d3;
+    text-decoration: none;
+    ;
+}
+
+.footer-distributed .footer-right {
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #1c1c1c;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+
+@media screen and (max-width: 880px) {
+
+    .footer-distributed {
+        font: bold 14px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+
+    .main {
+        line-height: normal;
+        font-size: auto;
+    }
+}
+
+.contactinfo {
+    color: white;
+    text-decoration: none;
+}
+
+.author {
+    background-color: #1b1c1b;
+    left: 0;
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    min-height: 5vh;
+    text-align: center;
+}
+
+.author a {
+    text-decoration: none;
+    color: white;
+}
+
+.author a:hover {
+    color: rgb(184, 181, 181);
+    transition: 0.3s;
+}

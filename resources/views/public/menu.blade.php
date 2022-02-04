@@ -1,12 +1,12 @@
 @extends('layouts.public-nav')
-@section('title','Menu')
+@section('title','Jelovnik')
 @section('content')
 
 
 <div class="banner">
     <div class="banner-box">
         <div class="banner-box-inner">
-                <h3>Menu</h3>            
+                <h3>Jelovnik</h3>            
         </div>
     </div>
 </div>

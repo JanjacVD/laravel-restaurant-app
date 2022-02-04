@@ -44,9 +44,7 @@
 
 
 <section id="about">
-    <div class="about-img">
-    </div>
-
+    <img src="images/about.jpg" alt="Bottles of welcome drinks">
     <div class="aboutus-box">
         <h2 class="title-text">Upoznajte nas</h2>
         <p class="randomtext">
@@ -55,8 +53,10 @@
             Nudeći svježe proizvode svakog dana, pobrinut ćemo se da upamtite iskustvo vaše posjete.
             Smješten u centru malog, ali predivnog grada Vodica, nije teško naletjeti na nas.
             Uživajte u večeri na prekrasnoj terasi, popijte piće, ili možda dva i istražite čuda lokalne kuhinje.</p>
-        <a class="book-button" href="make-a-reservation">Rezerviraj stol</a>
-
+        <div class="buttons">
+            <a class="about-btn" href="make-a-reservation">Rezervirajte stol</a>
+            <a class="about-btn" href="make-a-reservation">Pogledajte meni</a>
+        </div>
     </div>
 
 
@@ -89,4 +89,5 @@
     </div>
 
 </section>
+@include('layouts.footer')
 @endsection
