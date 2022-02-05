@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreStatus;
 use App\Models\LimitReservations;
 use Illuminate\Http\Request;
 
@@ -14,50 +15,29 @@ class LimitReservationsController extends Controller
      */
     public function index()
     {
-        //
+        return view('status.index', ['status' => LimitReservations::all()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function settings()
+    {
+        return view('settings.index', ['status' => LimitReservations::all()]);
+    }
     public function create()
     {
-        //
+        return view('status.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreStatus $request)
     {
-        //
+        
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\LimitReservations  $limitReservations
-     * @return \Illuminate\Http\Response
-     */
     public function show(LimitReservations $limitReservations)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\LimitReservations  $limitReservations
-     * @return \Illuminate\Http\Response
-     */
     public function edit(LimitReservations $limitReservations)
     {
-        //
+        
     }
 
     /**

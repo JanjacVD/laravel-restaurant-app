@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AvaliableTime;
 use Illuminate\Http\Request;
 use App\Models\WorkTime;
 use App\Models\CategoryItem;
 use App\Models\FoodItem;
 use App\Models\SectionItem;
 use App\Models\Reservation;
+use App\Models\DatesOff;
+use App\Models\DaysOff;
 
 class PublicIndexController extends Controller
 {
@@ -21,6 +24,11 @@ class PublicIndexController extends Controller
     }
     public function booking()
     {
-        return view('public.booking', ['date-full' => Reservation::all()->countBy()]);
+        $max = AvaliableTime::orderBy('avaliable_time', 'ASC')->sum('capacity');
+        return view('public.booking', 
+        ['dateOff' => DatesOff::orderBy('noDate')->get(), 'dayOff' => DaysOff::all(), 
+        "booked" =>Reservation::groupBy('reservation_date')
+        ->having(Reservation::raw('count(reservation_date)'), '>=', $max)
+        ->pluck('reservation_date')]);
     }
 }

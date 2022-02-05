@@ -57,7 +57,10 @@
     var dateMin = new Date();
     dateMin.setDate(dateMin.getDate() + (dateMin.getHours() >= 12 ? 1 : 0));
     $(function() {
-        var disabledDays = [];
+        var disabledDays = [@foreach ($dateOff as $date) "{{$date->noDate}}", @endforeach 
+        @foreach ($booked as $bookedDate) "{{$bookedDate}}", @endforeach
+    
+    ];
         $("#datepicker").datepicker({
             minDate: dateMin,
             beforeShowDay: function(date) {
@@ -66,7 +69,7 @@
                 var isDisabled = ($.inArray(string, disabledDays) != -1);
 
                 //day != 0 disables all Sundays
-                return [day != 0 && !isDisabled];
+                return [@foreach($dayOff as $day)day != {{$day->day}} && @endforeach !isDisabled];
             }
         });
     });

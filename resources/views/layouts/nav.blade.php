@@ -69,6 +69,12 @@
               </li>
               <li><a class="dropdown-item" href="#">Otkaži rezervaciju</a></li>
               @endif
+              @if(Auth::user()->role == 'Admin')
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/admin/reservation-settings">Postavke</a></li>
+              @endif
             </ul>
           </li>
           @if(Auth::user()->role == 'Admin')

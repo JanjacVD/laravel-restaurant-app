@@ -15,6 +15,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicIndexController;
+use App\Http\Controllers\AvaliableTimeController;
 
 
 Route::get('/menu', [App\Http\Controllers\PublicIndexController::class, 'menu'])->name('public.menu');
@@ -53,4 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('admin/gallery', GalleryController::class);
 
+    Route::resource('admin/time', AvaliableTimeController::class);
+
+    Route::get('admin/reservation-settings', [App\Http\Controllers\LimitReservationsController::class, 'settings'])->name('reservation-settings');
 });

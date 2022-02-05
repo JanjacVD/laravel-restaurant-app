@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LimitReservations extends Model
+class AvaliableTime extends Model
 {
-    protected $fillable = ['status'];
-
+    protected $fillable = ['avaliable_time', 'capacity'];
+    
     use HasFactory;
 }

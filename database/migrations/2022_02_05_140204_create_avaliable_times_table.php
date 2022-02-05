@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLimitReservationsTable extends Migration
+class CreateAvaliableTimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateLimitReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('limit_reservations', function (Blueprint $table) {
+        Schema::create('avaliable_times', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            
-            $table->integer('status');
+
+            $table->string('avaliable_time');
+            $table->integer('capacity');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateLimitReservationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('limit_reservations');
+        Schema::dropIfExists('avaliable_times');
     }
 }
