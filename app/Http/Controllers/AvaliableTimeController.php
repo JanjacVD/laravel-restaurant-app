@@ -77,8 +77,19 @@ class AvaliableTimeController extends Controller
      * @param  \App\Models\AvaliableTime  $avaliableTime
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AvaliableTime $avaliableTime)
+    public function destroy($id)
     {
-        //
+        if (Auth::user()->role == 'Admin') {
+
+            $time = AvaliableTime::findOrFail($id);
+            $time->delete();
+
+            session()->flash('status', 'Vrijeme uspješno izbrisano');
+
+            return redirect()->route('time.index');
+        } else {
+            session()->flash('status', 'You do not have authority for this.');
+            return redirect()->route('home');
+        }
     }
 }

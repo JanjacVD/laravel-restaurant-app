@@ -1,5 +1,6 @@
 @extends('layouts.public-nav')
 @section('title','Jelovnik')
+@section('index','index')
 @section('content')
 
 

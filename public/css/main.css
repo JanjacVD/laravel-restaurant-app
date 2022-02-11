@@ -443,6 +443,7 @@ body {
 }
 .booking-form-line input[type=text],
 input[type=number],
+input[type=password],
 input[type=email] {
     background: none;
     border: none;
@@ -716,4 +717,13 @@ footer {
 .author a:hover {
     color: rgb(184, 181, 181);
     transition: 0.3s;
+}
+.select-time{
+    width:100%;
+    padding:1rem 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border:1px solid white;
+    color:white;
+    font-size: 1.2rem;
+    border-radius: 10px;
 }

@@ -1,5 +1,6 @@
 @extends('layouts.public-nav')
 @section('title','Naslovnica')
+@section('index','index')
 @section('content')
 
 <!------HEADER-->

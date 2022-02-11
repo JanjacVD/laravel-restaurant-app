@@ -19,7 +19,7 @@
          @if($row->status == 0)Zatvoreno @elseif ($row->status = 1)Zima @elseif ($row->status = 2)Ljeto @endif
          @endforeach
         <br>
-        <a class="btn btn-primary p-2">Promijeni status</a>
+        <a href="{{route('status.index') }}" class="btn btn-primary p-2">Upravljaj statusom</a>
         </p>
       </div>
     </div>

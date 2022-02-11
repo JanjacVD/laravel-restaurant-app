@@ -33,7 +33,6 @@ class FoodItemController extends Controller
 
     public function update(StoreFoodItem $request, $id)
     {
-
         if (Auth::user()->role == 'Admin') {
             $food_item = FoodItem::findOrFail($id);
             $validated = $request->validated();

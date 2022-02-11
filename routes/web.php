@@ -16,11 +16,21 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicIndexController;
 use App\Http\Controllers\AvaliableTimeController;
-
+use App\Http\Controllers\LimitReservationsController;
+use App\Http\Controllers\ManageReservationsController;
+use App\Http\Controllers\ReservationController;
+use App\Models\PendingReservation;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PendingReservation as MailPendingReservation;
+use App\Http\Middleware\VerifyCsrfToken;
+use GuzzleHttp\Middleware;
 
 Route::get('/menu', [App\Http\Controllers\PublicIndexController::class, 'menu'])->name('public.menu');
 
 Route::get('/book-a-table', [App\Http\Controllers\PublicIndexController::class, 'booking'])->name('public.booking');
+
+Route::get('/choose-time', [App\Http\Controllers\PublicIndexController::class, 'time'])->name('public.choose-time');
+
 
 Route::get('/contact', function () {
     return view('public.contact');
@@ -34,9 +44,17 @@ Auth::routes();
 
 Route::resource('/', PublicIndexController::class);
 
+Route::resource('/reservation', ReservationController::class);
+
+Route::post('/pending', [App\Http\Controllers\PendingReservationController::class, 'store'])->name('pending.store');
+
+Route::get('/resend', [App\Http\Controllers\PendingReservationController::class, 'resend'])->name('pending.resend');
+
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::resource('admin/reservations', ManageReservationsController::class);
 
     Route::resource('admin/food', FoodItemController::class);
 
@@ -55,6 +73,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('admin/gallery', GalleryController::class);
 
     Route::resource('admin/time', AvaliableTimeController::class);
+
+    Route::resource('admin/status', LimitReservationsController::class);
 
     Route::get('admin/reservation-settings', [App\Http\Controllers\LimitReservationsController::class, 'settings'])->name('reservation-settings');
 });

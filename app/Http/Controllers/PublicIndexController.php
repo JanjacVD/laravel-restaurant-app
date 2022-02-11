@@ -25,10 +25,29 @@ class PublicIndexController extends Controller
     public function booking()
     {
         $max = AvaliableTime::orderBy('avaliable_time', 'ASC')->sum('capacity');
-        return view('public.booking', 
-        ['dateOff' => DatesOff::orderBy('noDate')->get(), 'dayOff' => DaysOff::all(), 
-        "booked" =>Reservation::groupBy('reservation_date')
-        ->having(Reservation::raw('count(reservation_date)'), '>=', $max)
-        ->pluck('reservation_date')]);
+        return view(
+            'public.booking',
+            [
+                'dateOff' => DatesOff::orderBy('noDate')->get(), 'dayOff' => DaysOff::all(),
+                "booked" => Reservation::groupBy('reservation_date')
+                    ->having(Reservation::raw('count(reservation_date)'), '>=', $max)
+                    ->pluck('reservation_date')
+            ]
+        );
+    }
+    public function time(Request $request)
+    {
+
+        $originalDate = $request['date'];
+        $newDate = date("Y-m-d", strtotime($originalDate));
+        return view(
+            'public.time',
+            [
+                'time' => AvaliableTime::orderBy('avaliable_time')->select('avaliable_time', 'capacity')->get(),
+                'banned_period' =>  Reservation::where('reservation_date', $newDate)->select('reservation_time', Reservation::raw('count(*) as count'))
+                    ->groupBy('reservation_time')
+                    ->get()
+            ]
+        );
     }
 }

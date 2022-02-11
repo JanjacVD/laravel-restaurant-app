@@ -17,15 +17,17 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->timestamps();
 
+            $table->string('token');
             $table->string('order_number');
             $table->string('name');
             $table->string('email');
             $table->string('phone');
             $table->integer('smoke');
             $table->integer('people');
-            $table->date('reservation_date');
-            $table->time('reservation_time');
+            $table->string('reservation_date');
+            $table->string('reservation_time');
             $table->string('cancel_key');
+            $table->text('message');
         });
     }
 

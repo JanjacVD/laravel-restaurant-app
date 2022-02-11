@@ -1,36 +1,37 @@
 @extends('layouts.public-nav')
 @section('title','Rezervirajte stol')
+@section('index','index')
 @section('content')
 <script src="{{ mix('js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ mix('js/jquery-1.13.1.js') }}"></script>
 <link rel="stylesheet" href="{{ mix('css/jquery-1.13.1.css') }}">
 <div class="booking-body">
-    <form action="##" method="POST" class="booking-form" autocomplete="off">
+    <form action="{{route('public.choose-time') }}" method="GET" class="booking-form" autocomplete="off">
         <div class="booking-form-line"><h1 class="booking-title">Rezervirajte stol</h1></div>
         <div class="booking-form-line"></div>
         <div class="booking-form-line">
             <label for="name" class="label">Name:</label>
-            <input id="name" class="input-text" type="text" name="name">
+            <input id="name" class="input-text" type="text" name="name" required>
         </div>
 
         <div class="booking-form-line">
             <label for="email" class="label">E-mail:</label>
-            <input id="email" class="input-text" type="email" name="email">
+            <input id="email" class="input-text" type="email" name="email" required>
         </div>
 
         <div class="booking-form-line">
             <label for="datepicker" class="label">Datum:</label>
-            <input type="text" class="input-text" id="datepicker" name="date">
+            <input type="text" class="input-text" id="datepicker" name="date" required>
         </div>
 
         <div class="booking-form-line">
             <label class="label" for="people">Broj osoba:</label>
-            <input id="people" class="input-text" type="number" min="1" max="8" name="people">
+            <input id="people" class="input-text" type="number" min="1" max="8" name="people" required>
         </div>
 
         <div class="booking-form-line">
             <label for="phone" class="label">Mobitel:</label>
-            <input id="phone" class="input-text" type="number" name="phone">
+            <input id="phone" class="input-text" type="number" name="phone" required>
         </div>
 
         <div class="booking-form-line">
@@ -38,7 +39,7 @@
             <br>
             <div class="booking-radio">
                 <div class="booking-radio-single">
-                    <input type="radio" id="smokeYes" name="smoke" value="1">
+                    <input type="radio" id="smokeYes" name="smoke" value="1" required> 
                     <label for="smokeYes">Da</label>
                 </div>
                 <div class="booking-radio-single">
