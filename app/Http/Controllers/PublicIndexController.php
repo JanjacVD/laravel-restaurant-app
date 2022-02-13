@@ -11,6 +11,10 @@ use App\Models\SectionItem;
 use App\Models\Reservation;
 use App\Models\DatesOff;
 use App\Models\DaysOff;
+use App\Models\LimitReservations;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
+use App\Models\Gallery;
 
 class PublicIndexController extends Controller
 {
@@ -31,7 +35,8 @@ class PublicIndexController extends Controller
                 'dateOff' => DatesOff::orderBy('noDate')->get(), 'dayOff' => DaysOff::all(),
                 "booked" => Reservation::groupBy('reservation_date')
                     ->having(Reservation::raw('count(reservation_date)'), '>=', $max)
-                    ->pluck('reservation_date')
+                    ->pluck('reservation_date'),
+                'bookingStatus' => LimitReservations::first()->get()
             ]
         );
     }
@@ -49,5 +54,25 @@ class PublicIndexController extends Controller
                     ->get()
             ]
         );
+    }
+    public function contact()
+    {
+        return view('public.contact');
+    }
+    public function sendmail(Request $request)
+    {
+        $details = [
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'subject' => $request['subject'],
+            'message' => $request['message'],
+        ];
+        Mail::to(env('CONTACT_MAIL'))->send(new ContactMail($details));
+        session()->flash('status', 'Vaša poruka je usjpešno poslana.');
+        return redirect()->route('public.contact');
+    }
+    public function gallery()
+    {
+        return view('public.gallery', ['gallery'=>Gallery::where('active', '1')->orderby('order','ASC')->get()]);
     }
 }

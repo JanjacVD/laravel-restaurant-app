@@ -16,7 +16,7 @@
       <div class="card-body fs-2">
         <h3 class="card-title">Status rezervacija</h3>
         <p class="card-text">Trenutni status rezervacija: @foreach ($status as $row)
-         @if($row->status == 0)Zatvoreno @elseif ($row->status = 1)Zima @elseif ($row->status = 2)Ljeto @endif
+         @if($row->status == 0)Zatvoreno @elseif ($row->status == 1)Zima @elseif ($row->status == 2)Ljeto @endif
          @endforeach
         <br>
         <a href="{{route('status.index') }}" class="btn btn-primary p-2">Upravljaj statusom</a>

@@ -13,6 +13,11 @@
             {{'Zahtjev rezervaciju na taj E-mail već postoji, molimo provjerite svoju E-mail poštu'}}
         </div>
         @endif
+        @if ($errors->has('reservation_time'))
+        <div style="color:red;font-size:1.5em;grid-column: span 2;" class="booking-form-line">
+            {{'Molimo odaberite vrijeme'}}
+        </div>
+        @endif
         <input type="hidden" name="name" value="{{ $_GET['name'] }}">
         <input type="hidden" name="email" value="{{ $_GET['email'] }}">
         <input type="hidden" name="phone" value="{{ $_GET['phone'] }}">

@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class SendToAdmin extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $details;
     /**
      * Create a new message instance.
      *

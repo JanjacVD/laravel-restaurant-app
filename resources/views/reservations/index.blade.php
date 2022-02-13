@@ -5,6 +5,8 @@
 @section('content')
 
 <h1 class="text-center p-3 fw-bold">Rezervacije</h1>
+<a class="btn btn-info btn-sm py-3 px-4" style="margin-top:10px;margin-left:5px;" href="{{ route('reservation.today') }}">Printaj za danas</a>
+
 @if (session('status'))
 <div class="alert alert-success" role="alert">
     {{session('status')}}
@@ -74,7 +76,7 @@
     </div>
     <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop{{$row->id}}" aria-labelledby="offcanvasTopLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasTopLabel">Opis</h5>
+            <h2 id="offcanvasTopLabel">Poruka</h2>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">

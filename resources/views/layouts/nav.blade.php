@@ -60,22 +60,22 @@
               Rezervacije
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Printaj za dan</a></li>
+              <li><a class="dropdown-item" href="{{ route('reservations.date') }}">Printaj za dan</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Sve rezervacije</a></li>
+              <li><a class="dropdown-item" href="{{route('reservations.index') }}">Sve rezervacije</a></li>
               @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Manager')
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Otkaži rezervaciju</a></li>
+              <li><a class="dropdown-item" href="{{route('reservations.cancel') }}">Otkaži rezervaciju</a></li>
               @endif
               @if(Auth::user()->role == 'Admin')
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="/admin/reservation-settings">Postavke</a></li>
+              <li><a class="dropdown-item" href="{{route('reservation-settings') }}">Postavke</a></li>
               @endif
             </ul>
           </li>
@@ -86,11 +86,11 @@
               Galerija
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Pokaži galeriju</a></li>
+              <li><a class="dropdown-item" href="{{route('gallery.index') }}">Pokaži galeriju</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Dodaj sliku</a></li>
+              <li><a class="dropdown-item" href="{{route('gallery.create') }}">Dodaj sliku</a></li>
             </ul>
           </li>
           @endif

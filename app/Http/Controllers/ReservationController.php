@@ -98,7 +98,8 @@ class ReservationController extends Controller
                         'date' => $msgDate,
                         'time' => $info['reservation_time'],
                         'token' => $token,
-                        'key' => $randomPassword
+                        'key' => $randomPassword,
+                        'message' => $message
                     ];
 
                     Mail::to($info['email'])->send(new ConfirmedReservation($details));
@@ -138,7 +139,10 @@ class ReservationController extends Controller
                     session()->flash('password', 'Lozinka se ne podudara');
                     return redirect()->back();
                 }
-                return view('public.cancel.sucess');
+                return view('public.cancel-sucess');
+            } else {
+                session()->flash('password', 'Neispravan token');
+                return redirect()->back();
             }
         } catch (ModelNotFoundException $e) {
             return view('public.no-exist');

@@ -14,7 +14,8 @@ class PendingReservationController extends Controller
     {
         $request->validate([
             'email' => 'unique:pending_reservations',
-            'order_number' => 'unique:pending_reservations'
+            'order_number' => 'unique:pending_reservations',
+            'reservation_time' => 'required'
         ]);
         $token = Uuid::uuid1()->toString();
         $originalDate = $request['reservation_date'];

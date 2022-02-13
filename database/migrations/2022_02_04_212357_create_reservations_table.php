@@ -24,7 +24,7 @@ class CreateReservationsTable extends Migration
             $table->string('phone');
             $table->integer('smoke');
             $table->integer('people');
-            $table->string('reservation_date');
+            $table->date('reservation_date');
             $table->string('reservation_time');
             $table->string('cancel_key');
             $table->text('message');

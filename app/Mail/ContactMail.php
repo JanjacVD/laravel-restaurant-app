@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CancelToAdmin extends Mailable
+class ContactMail extends Mailable
 {
     public $details;
     use Queueable, SerializesModels;
@@ -29,8 +29,8 @@ class CancelToAdmin extends Mailable
      */
     public function build()
     {
-        return $this->subject('Rezervacija otkazana')
-        ->from('reservations@restoran-simun.hr', 'Restoran & Pizzeria Šimun')
-        ->view('emails.reservations.canceled');
+        return $this->subject('Nova poruka')
+        ->from('contact@restoran-simun.hr', 'Restoran & Pizzeria Šimun')
+        ->view('emails.contact.message');
     }
 }

@@ -21,7 +21,7 @@
         </div>
         <div class="booking-form-line" style="grid-column: span 2;">
             <label for="message" class="label">Ukoliko imate neku poruku:</label>
-            <textarea style="background:rgba(0,0,0,0.2); width:100%; color:#fff;" id="message" placeholder="Vaša poruka..." class="input-text" name="message" rows="5" cols="50"></textarea>
+            <textarea maxlength="50" style="background:rgba(0,0,0,0.2); width:100%; color:#fff;" id="message" placeholder="Vaša poruka..." class="input-text" name="message" rows="5" cols="50"></textarea>
         </div>
         <div class="booking-form-line">
             <button type="submit" name="submit">Potvrdi</button>

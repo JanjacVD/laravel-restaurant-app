@@ -1,5 +1,5 @@
 <body>
-    <h1>Rezervacija otkazana</h1>
+    <h1>Nova poruka</h1>
     <table>
         <tr>
             <td>
@@ -11,26 +11,26 @@
         </tr>
         <tr>
             <td>
-                Broj rezervacije:
+                Predmet:
             </td>
             <td>
-                {{$details['order']}}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Datum:
-            </td>
-            <td>
-                {{$details['date']}}
+                {{$details['subject']}}
             </td>
         </tr>
         <tr>
             <td>
-                Vrijeme:
+                Šalje:
             </td>
             <td>
-                {{$details['time']}}
+                {{$details['email']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Poruka:
+            </td>
+            <td>
+                {{$details['message']}}
             </td>
         </tr>
     </table>

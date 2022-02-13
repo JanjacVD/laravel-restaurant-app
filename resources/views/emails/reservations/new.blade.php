@@ -1,6 +1,62 @@
-Ime: $details['name'];
-Broj rezervacije: $details['order'];
-Datum: $details['date'];
-Vrijeme: $details['time'];
-Broj osoba: $details['people'];
-Mobitel: $details['phone'];
+<body>
+    <h1>Nova rezervacija</h1>
+    <table>
+        <tr>
+            <td>
+                Ime:
+            </td>
+            <td>
+                {{$details['name']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Broj rezervacije:
+            </td>
+            <td>
+                {{$details['order']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Datum:
+            </td>
+            <td>
+                {{$details['date']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Vrijeme:
+            </td>
+            <td>
+                {{$details['time']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Broj osoba:
+
+            </td>
+            <td>
+                {{$details['people']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mobitel:
+            </td>
+            <td>
+                {{$details['phone']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Poruka:
+            </td>
+            <td>
+                {{$details['message']}}
+            </td>
+        </tr>
+    </table>
+</body>

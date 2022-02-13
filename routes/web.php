@@ -31,14 +31,9 @@ Route::get('/book-a-table', [App\Http\Controllers\PublicIndexController::class, 
 
 Route::get('/choose-time', [App\Http\Controllers\PublicIndexController::class, 'time'])->name('public.choose-time');
 
+Route::get('/contact', [App\Http\Controllers\PublicIndexController::class, 'contact'])->name('public.contact');
 
-Route::get('/contact', function () {
-    return view('public.contact');
-})->name('public.contact');
-
-Route::get('/galery', function () {
-    return view('public.galery');
-})->name('public.galery');
+Route::get('/gallery', [App\Http\Controllers\PublicIndexController::class, 'gallery'])->name('public.gallery');
 
 Auth::routes();
 
@@ -48,7 +43,7 @@ Route::resource('/reservation', ReservationController::class);
 
 Route::post('/pending', [App\Http\Controllers\PendingReservationController::class, 'store'])->name('pending.store');
 
-Route::get('/resend', [App\Http\Controllers\PendingReservationController::class, 'resend'])->name('pending.resend');
+Route::post('/sending', [App\Http\Controllers\PublicIndexController::class, 'sendmail'])->name('public.sendmail');
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -56,16 +51,26 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('admin/reservations', ManageReservationsController::class);
 
+    Route::get('admin/reservations-today', [App\Http\Controllers\ManageReservationsController::class, 'today'])->name('reservation.today');
+
+    Route::get('admin/reservations-cancel', [App\Http\Controllers\ManageReservationsController::class, 'cancel'])->name('reservations.cancel');
+
+    Route::post('admin/reservations-delete', [App\Http\Controllers\ManageReservationsController::class, 'delete'])->name('reservations.delete');
+
+    Route::get('admin/reservations-date', [App\Http\Controllers\ManageReservationsController::class, 'date'])->name('reservations.date');
+
+    Route::post('admin/reservations-print', [App\Http\Controllers\ManageReservationsController::class, 'print'])->name('reservations.print');
+
     Route::resource('admin/food', FoodItemController::class);
 
     Route::resource('admin/category', CategoryItemController::class);
-    
+
     Route::resource('admin/section', SectionItemController::class);
-    
+
     Route::resource('admin/day-off', DaysOffController::class);
-    
+
     Route::resource('admin/work-time', WorkTimeController::class);
-    
+
     Route::resource('admin/date-off', DatesOffController::class);
 
     Route::resource('admin/staff', StaffController::class);

@@ -24,7 +24,7 @@ class CreatePendingReservationsTable extends Migration
             $table->integer('smoke');
             $table->integer('people');
             $table->date('reservation_date');
-            $table->time('reservation_time');
+            $table->string('reservation_time');
             $table->string('token');
         });
     }
