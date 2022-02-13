@@ -24,7 +24,7 @@ class PublicIndexController extends Controller
     }
     public function menu()
     {
-        return view('public.menu', ['section' => SectionItem::where('active', '1')->get(), 'category' => CategoryItem::where('active', '1')->get(), 'food' => FoodItem::where('active', '1')->get()]);
+        return view('public.menu', ['section' => SectionItem::where('active', '1')->orderBy('order','ASC',)->get(), 'category' => CategoryItem::where('active', '1')->orderBy('order','ASC',)->get(), 'food' => FoodItem::where('active', '1')->orderBy('order','ASC',)->get()]);
     }
     public function booking()
     {
@@ -36,7 +36,7 @@ class PublicIndexController extends Controller
                 "booked" => Reservation::groupBy('reservation_date')
                     ->having(Reservation::raw('count(reservation_date)'), '>=', $max)
                     ->pluck('reservation_date'),
-                'bookingStatus' => LimitReservations::first()->get()
+                'bookingStatus' => LimitReservations::first()
             ]
         );
     }
@@ -68,11 +68,15 @@ class PublicIndexController extends Controller
             'message' => $request['message'],
         ];
         Mail::to(env('CONTACT_MAIL'))->send(new ContactMail($details));
-        session()->flash('status', 'Vaša poruka je usjpešno poslana.');
+        if (app()->getLocale() == 'hr') {
+            session()->flash('status', 'Vaša poruka je usjpešno poslana.');
+        } else {
+            session()->flash('status', 'Your message was sucessfully sent.');
+        }
         return redirect()->route('public.contact');
     }
     public function gallery()
     {
-        return view('public.gallery', ['gallery'=>Gallery::where('active', '1')->orderby('order','ASC')->get()]);
+        return view('public.gallery', ['gallery' => Gallery::where('active', '1')->orderby('order', 'ASC')->get()]);
     }
 }

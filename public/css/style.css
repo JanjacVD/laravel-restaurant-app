@@ -81,7 +81,40 @@ button {
     user-select: none;
     /* Standard */
 }
+.lang-menu{
+    position: absolute;
+    top:0;
+    right:0;
+    height:100%;
+    background: none;
+    display: flex;
+    align-items:center;
+}
+.lang-menu-lang{
+    display:flex;
+    align-items:center;
+    height:100%;
+    margin:auto auto;
+    font-size: 1.5rem;
+    padding:0 1.3rem;
+    font-weight: 600;
+    color:inherit;
+}
 
+.lang-menu-triggered{
+    display:none;
+}
+.active-lang{
+    color: #ca2205 !important;;
+}
+@media only screen and (max-width: 600px) and (min-width: 200px){
+    .lang-menu{
+        display:none
+    }
+    .lang-menu-triggered{
+        display:block;
+    }
+}
 .title-large {
     font-family: inherit;
     font-size: 2.25rem;

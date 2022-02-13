@@ -20,6 +20,36 @@ body {
     display: none;
 }
 
+.cookiepopup {
+    min-width: 100vw;
+    min-height: 5vh;
+    background: rgb(98, 98, 98, 0.85);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding:1.2rem 1.8rem;
+    color:#fff;
+    text-align: center;
+}
+.cookiebtn{
+    background:rgb(35, 144, 5);
+    border-radius: 5px;
+    color:#c6bfbf;
+    padding:0.6em 1em;
+}
+.cookiebtn:hover{
+    background:rgb(25, 100, 4);
+    transition: 0.3s;
+}
+.cookietitle{
+    font-size:1.5rem;
+}
+.cookienotif{
+    font-size: 1rem;
+}
+.cookienotif a{
+    color:#11053b
+}
 /*Menu PAGE*/
 
 .banner {
@@ -845,6 +875,7 @@ input.contact-input {
     background-position: center;
     cursor: pointer;
 }
+
 .gallery-image div {
     width: 100%;
     height: 100%;
@@ -924,34 +955,36 @@ input.contact-input {
     color: black;
 }
 
- .img-desc {
+.img-desc {
     width: 100%;
     left: 0;
-    bottom:2vh;
+    bottom: 2vh;
     background: none;
     z-index: 1000000;
     text-align: center;
-    position:fixed;
-    color:white;
-    font-size:2rem;
-    z-index:100000000;
- }
- @media screen and (max-width:1100px) {
+    position: fixed;
+    color: white;
+    font-size: 2rem;
+    z-index: 100000000;
+}
+
+@media screen and (max-width:1100px) {
     #index-gallery {
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
     }
- }
- @media screen and (max-width:850px) {
+}
+
+@media screen and (max-width:850px) {
     #index-gallery {
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
     }
- }
- @media screen and (max-width:400px) {
+}
+
+@media screen and (max-width:400px) {
     #index-gallery {
         grid-template-columns: 1fr;
         grid-gap: 20px;
     }
- }
- 
+}

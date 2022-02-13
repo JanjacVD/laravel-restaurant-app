@@ -110,7 +110,11 @@ class ReservationController extends Controller
                     return view('public.booking-sucess');
                 }
             } else {
-                session()->flash('email', 'E-mail adresa se ne podudara');
+                if (app()->getLocale() == 'hr') {
+                    session()->flash('email', 'E-mail adresa se ne podudara');
+                } else {
+                    session()->flash('email', 'E-mail address does not match');
+                }
                 return redirect()->back();
             }
         }
@@ -136,12 +140,15 @@ class ReservationController extends Controller
                     Mail::to(env('MAIL_FROM_ADDRESS'))->send(new CancelToAdmin($details));
                     $canceled->delete();
                 } else {
-                    session()->flash('password', 'Lozinka se ne podudara');
+                    if (app()->getLocale() == 'hr') {
+                    } else {
+                        session()->flash('password', 'Password does not match');
+                    }
                     return redirect()->back();
                 }
                 return view('public.cancel-sucess');
             } else {
-                session()->flash('password', 'Neispravan token');
+                session()->flash('password', 'Not found');
                 return redirect()->back();
             }
         } catch (ModelNotFoundException $e) {

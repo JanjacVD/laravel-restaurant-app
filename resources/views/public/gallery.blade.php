@@ -1,13 +1,15 @@
 @extends('layouts.public-nav')
 @section('index','noindex')
-@section('title','Rezervacija uspješna')
+@section('title', __("messages.nav4") )
 @section('content')
 @php
 $url = asset('storage/images/thumbs/thumb');
 @endphp
-<h1 style="text-align:center;margin-top:20px;font-size:3.5rem;text-transform:uppercase;width:100%;background:#0692bd;color:#fff;letter-spacing:6px;">Galerija</h1>
+<h1 style="text-align:center;margin-top:20px;font-size:3.5rem;text-transform:uppercase;width:100%;background:#0692bd;color:#fff;letter-spacing:6px;">{{__('messages.nav4')}}</h1>
 <section id="index-gallery" class="wrapper-gallery">
+    
     @foreach ($gallery as $row)
+    @if (app()->getLocale() == 'hr')
     <div class="gallery-image image{{$row->order}}">
         <div><a>{{$row->title}}</a></div>
     </div>
@@ -20,6 +22,22 @@ $url = asset('storage/images/thumbs/thumb');
 }
 </style>
 <div class="img-desc desc-{{$row->order}}">{{$row->img_desc}}</div>
+@elseif(app()->getLocale() == 'en')
+
+
+<div class="gallery-image image{{$row->order}}">
+        <div><a>{{$row->title_en}}</a></div>
+    </div>
+    <style>
+#index-gallery .image{{$row->order}} {
+    background-image: url('{{$url}}{{$row->order}}.jpg');
+}
+#index-gallery .desc-{{$row->order}}{
+    display:none
+}
+</style>
+<div class="img-desc desc-{{$row->order}}">{{$row->img_desc_en}}</div>
+@endif
     @endforeach
 </section>
 

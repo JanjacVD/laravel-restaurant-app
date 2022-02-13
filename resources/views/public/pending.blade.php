@@ -1,21 +1,21 @@
 @extends('layouts.public-nav')
-@section('title','Potvrdite rezervaciju')
+@section('title', __("messages.nav3") )
 @section('index','noindex')
 @section('content')
 
 <div class="booking-body">
     <div class="booking-form">
         <div class="booking-form-line" style="grid-column: span 2;">
-            <h1 class="booking-title">Potvrdite rezervaciju</h1>
+            <h1 class="booking-title">{{__('messages.confirm1')}}</h1>
         </div>
         <div class="booking-form-line" style="grid-column: span 2;">
-            Molimo vas potvrdite vašu rezervaciju, poslali smo vam E-mail za potvrdu
+            {{__('messages.confirm2')}}
         </div>
         <div class="booking-form-line" style="grid-column: span 2;">
-            Ukoliko ne potvrdite vašu rezervaciju u roku od 15 minuta, zahtjev će biti poništen.
+            {{__('messages.confirm3')}}
         </div>
         <div class="booking-form-line">
-            <button type="submit" onclick="redirect()">Zatvori</button>
+            <button type="submit" onclick="redirect()">{{__('messages.bookClose')}}</button>
         </div>
     </div>
 </div>

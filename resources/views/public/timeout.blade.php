@@ -1,20 +1,20 @@
 @extends('layouts.public-nav')
-@section('title','Rezervacija ne postoji')
+@section('title', __("messages.nav3") )
 @section('index','noindex')
 @section('content')
 <div class="booking-body">
     <div class="booking-form">
         <div class="booking-form-line" style="grid-column: span 2;">
-            <h1 class="booking-title">Rezervacija istekla</h1>
+            <h1 class="booking-title">{{__('messages.expire')}}</h1>
         </div>
         <div class="booking-form-line" style="grid-column: span 2;">
-            Vrijeme za potvrdu vaše rezervacije je isteklo
+            {{__('messages.expireTime')}}
         </div>
         <div class="booking-form-line" style="grid-column: span 2;">
-            Pokušajte ponovno
+            {{__('messages.tryAgain')}}
         </div>
         <div class="booking-form-line">
-            <button type="submit" onclick="redirect()">Pokušaj ponovno</button>
+            <button type="submit" onclick="redirect()">{{__('messages.tryBtn')}}</button>
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 @extends('layouts.public-nav')
-@section('title','Rezervirajte stol')
+@section('title', __("messages.nav3") )
 @section('index','index')
 @section('content')
 
@@ -7,23 +7,22 @@
 <script src="{{ mix('js/jquery-1.13.1.js') }}"></script>
 <link rel="stylesheet" href="{{ mix('css/jquery-1.13.1.css') }}">
 <div class="booking-body">
-    @foreach($bookingStatus as $row)
 
-    @if($row->status === 0)
+    @if($bookingStatus->status === 0)
 
     <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); width:80%; height:60%; background:rgba(0,0,0,0.2);display:flex; color:#fff; text-transform:uppercase;">
-        <h1 style="margin:auto;">Rezervacije trenutno onemogućene</h1>
+        <h1 style="margin:auto;">{{ __('messages.bookDisable')}}</h1>
     </div>
 
     @else
 
     <form action="{{route('public.choose-time') }}" method="GET" class="booking-form" autocomplete="off">
         <div class="booking-form-line">
-            <h1 class="booking-title">Rezervirajte stol</h1>
+            <h1 class="booking-title">{{__('messages.bookBtn')}}</h1>
         </div>
         <div class="booking-form-line"></div>
         <div class="booking-form-line">
-            <label for="name" class="label">Name:</label>
+            <label for="name" class="label">{{__('messages.name')}}:</label>
             <input id="name" class="input-text" type="text" name="name" required>
         </div>
 
@@ -33,24 +32,24 @@
         </div>
 
         <div class="booking-form-line">
-            <label for="datepicker" class="label">Datum:</label>
+            <label for="datepicker" class="label">{{__('messages.date')}}:</label>
             <input type="text" class="input-text" id="datepicker" name="date" required>
         </div>
 
         <div class="booking-form-line">
-            <label class="label" for="people">Broj osoba:</label>
+            <label class="label" for="people">{{__('messages.people')}}:</label>
             <input id="people" class="input-text" type="number" min="1" max="8" name="people" required>
         </div>
 
         <div class="booking-form-line">
-            <label for="phone" class="label">Mobitel:</label>
+            <label for="phone" class="label">{{__('messages.phone')}}:</label>
             <input id="phone" class="input-text" type="number" name="phone" required>
         </div>
         <div class="booking-form-line">
-            @if($row->status == 1)
+            @if($bookingStatus->status == 1)
             <input type="hidden" name="smoke" value="0">
-            @elseif($row->status == 2)
-            Pušači:
+            @elseif($bookingStatus->status == 2)
+            {{__('messages.smoke')}}:
             <br>
             <div class="booking-radio">
                 <div class="booking-radio-single">
@@ -67,11 +66,10 @@
         </div>
 
         <div class="booking-form-line">
-            <button type="submit" name="submit">Odaberi vrijeme</button>
+            <button type="submit" name="submit">{{__('messages.bookNext')}}</button>
         </div>
     </form>
     @endif
-    @endforeach
 
 </div>
 <script>

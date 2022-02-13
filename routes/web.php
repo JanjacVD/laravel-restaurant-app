@@ -25,6 +25,16 @@ use App\Mail\PendingReservation as MailPendingReservation;
 use App\Http\Middleware\VerifyCsrfToken;
 use GuzzleHttp\Middleware;
 
+Route::get('/hr', function() {
+    session(['locale' => 'hr']);
+    return back();
+});
+
+Route::get('/en', function() {
+    session(['locale' => 'en']);
+    return back();
+});
+
 Route::get('/menu', [App\Http\Controllers\PublicIndexController::class, 'menu'])->name('public.menu');
 
 Route::get('/book-a-table', [App\Http\Controllers\PublicIndexController::class, 'booking'])->name('public.booking');
@@ -35,9 +45,7 @@ Route::get('/contact', [App\Http\Controllers\PublicIndexController::class, 'cont
 
 Route::get('/gallery', [App\Http\Controllers\PublicIndexController::class, 'gallery'])->name('public.gallery');
 
-Auth::routes();
-
-Route::resource('/', PublicIndexController::class);
+Route::resource('/', PublicIndexController::class)->only('index');
 
 Route::resource('/reservation', ReservationController::class);
 
@@ -45,7 +53,13 @@ Route::post('/pending', [App\Http\Controllers\PendingReservationController::clas
 
 Route::post('/sending', [App\Http\Controllers\PublicIndexController::class, 'sendmail'])->name('public.sendmail');
 
+
+
+
+
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
 

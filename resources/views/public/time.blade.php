@@ -1,5 +1,5 @@
 @extends('layouts.public-nav')
-@section('title','Rezervirajte stol')
+@section('title', __("messages.nav3") )
 @section('index','noindex')
 @section('content')
 <div class="booking-body">
@@ -15,7 +15,7 @@
         @endif
         @if ($errors->has('reservation_time'))
         <div style="color:red;font-size:1.5em;grid-column: span 2;" class="booking-form-line">
-            {{'Molimo odaberite vrijeme'}}
+            {{__('messages.timeError')}}
         </div>
         @endif
         <input type="hidden" name="name" value="{{ $_GET['name'] }}">
@@ -25,9 +25,9 @@
         <input type="hidden" name="people" value="{{ $_GET['people'] }}">
         <input type="hidden" name="reservation_date" value="{{ $_GET['date'] }}">
         <div class="booking-form-line" style="grid-column: span 2;">
-            <label for="time" class="label" style="font-size:1.6rem">Vrijeme:</label>
+            <label for="time" class="label" style="font-size:1.6rem">{{__('messages.time')}}:</label>
             <select class="select-time" name="reservation_time" id="time" required>
-                <option hidden disabled selected>Odaberite vrijeme</option>
+                <option hidden disabled selected>{{__('messages.bookNext')}}</option>
                 @foreach ($time as $time_row)
                 <option name="" value="{{$time_row->avaliable_time}}" id="" @foreach ($banned_period as $period) @if($period->reservation_time == $time_row->avaliable_time)
                     @if ($period->count >= $time_row->capacity) hidden
@@ -41,7 +41,7 @@
         </div>
 
         <div class="booking-form-line">
-            <button type="submit" name="submit">Rezerviraj</button>
+            <button type="submit" name="submit">{{__('messages.bookIt')}}</button>
         </div>
     </form>
 </div>

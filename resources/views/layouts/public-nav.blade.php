@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
 	<meta charset="UTF-8">
@@ -34,18 +34,46 @@
 							</svg>
 						</span>
 					</li>
-					<li class="menu-item"><a href="{{ route('index') }}" class="menu-link">Naslovnica</a></li>
-					<li class="menu-item"><a href="{{ route('public.menu') }}" class="menu-link">Jelovnik</a></li>
-					<li class="menu-item"><a href="{{ route('public.booking') }}" class="menu-link">Rezervirajte stol</a></li>
-					<li class="menu-item"><a href="{{ route('public.gallery') }}" class="menu-link">Galerija</a></li>
-					<li class="menu-item"><a href="{{ route('public.contact') }}" class="menu-link">Kontakt</a></li>
+					<li class="menu-item"><a href="{{ route('index') }}" class="menu-link">{{__('messages.nav1')}}</a></li>
+					<li class="menu-item"><a href="{{ route('public.menu') }}" class="menu-link">{{__('messages.nav2')}}</a></li>
+					<li class="menu-item"><a href="{{ route('public.booking') }}" class="menu-link">{{__('messages.nav3')}}</a></li>
+					<li class="menu-item"><a href="{{ route('public.gallery') }}" class="menu-link">{{__('messages.nav4')}}</a></li>
+					<li class="menu-item"><a href="{{ route('public.contact') }}" class="menu-link">{{__('messages.nav5')}}</a></li>
+					<li class="menu-item lang-menu-triggered"><a style="display:flex;flex-direction:row;" href="/hr" class="menu-link @if (app()->getLocale() == 'hr') active-lang @endif ">HR <img style="max-height:15px;max-width:20px;height:auto;width:auto;margin-left:8px;"src="/images/croatia.svg"></a></li>					
+					<li class="menu-item lang-menu-triggered"><a style="display:flex;flex-direction:row;" href="/en" class="menu-link @if (app()->getLocale() == 'en') active-lang @endif ">EN <img style="max-height:20px;max-width:20px;height:auto;width:auto;margin-left:8px;"src="/images/english.svg"></a></li>
+
 				</ul>
+			</div>
+			<div class="lang-menu">
+				<a class="lang-menu-lang menu-link @if (app()->getLocale() == 'hr') active-lang @endif " style="border-left:1px solid #8a8a8a;border-right:1px solid #8a8a8a;font-size:1.5rem" href="/hr">HR</a>
+				<a class="lang-menu-lang menu-link @if (app()->getLocale() == 'en') active-lang @endif " style="font-size:1.5rem" href="/en">EN</a>
 			</div>
 		</nav>
 	</header>
 	<div class="py-4 my-5">
 		@yield('content')
 	</div>
+<!-- COOKIES -->
+@if (Cookie::get('cookiesAccepted'))
+@else
+	<div class="cookiepopup">
+		<div class="cookiemsg">
+			<h4 class="cookietitle">
+				{{__('messages.cookie')}}
+			</h4>
+			<p class="cookienotif">{{__('messages.cookieuse')}} <a href="">{{__('messages.findOutMore')}}</a>
+			</p>
+		</div>
+		<button onclick=acceptCookies() class="cookiebtn">{{__('messages.getit')}}</button>
+	</div>
+	<script>
+		function acceptCookies(){
+			document.cookie = "cookiesAccepted; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+			let cookiePopUp = document.querySelector('.cookiepopup');
+			cookiePopUp.style.display = "none";
+		}
+	</script>
+@endif
 	<script>
 		const openMenu = document.querySelector(".open-menu");
 		const closeMenu = document.querySelector(".close-menu");

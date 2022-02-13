@@ -1,20 +1,20 @@
 @extends('layouts.public-nav')
-@section('title','Rezervacija ne postoji')
+@section('title', __("messages.nav3") )
 @section('index','noindex')
 @section('content')
 <div class="booking-body">
     <div class="booking-form">
         <div class="booking-form-line" style="grid-column: span 2;">
-            <h1 class="booking-title">Rezervacija ne postoji</h1>
+            <h1 class="booking-title">{{__('messages.alrdyexist')}}</h1>
         </div>
         <div class="booking-form-line" style="grid-column: span 2;">
-            Rezervacija ne postoji, vrlo vjerovatno je već poništena
+            {{__('messages.noExistmsg')}}
         </div>
         <div class="booking-form-line" style="grid-column: span 2;">
-            Hvala vam
+            {{__('messages.thanks')}}
         </div>
         <div class="booking-form-line">
-            <button type="submit" onclick="redirect()">Rezerviraj</button>
+            <button type="submit" onclick="redirect()">{{__('messages.bookBtn')}}</button>
         </div>
     </div>
 </div>
