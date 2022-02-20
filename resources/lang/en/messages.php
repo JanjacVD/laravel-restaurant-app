@@ -83,4 +83,21 @@ return [
     'weRespond' => "We'll make sure to reach back to you as soon as possible",
     'contactSent' => 'Your message was sent successfully.',
     'sendTheShit' => 'Send',
+    'pp4' => 'Privacy Policy for',
+    'firstline' => 'At Restoran & Pizzeria Šimun, accessible from http://restoran-simun.hr, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Restoran & Pizzeria Šimun and how we use it.',
+    'secondline' => 'If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.',
+    'thirdline' => 'This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Restoran & Pizzeria Šimun. This policy is not applicable to any information collected offline or via channels other than this website.',
+    'consent' => 'consent',
+    'fourthline' => 'By using our website, you hereby consent to our Privacy Policy and agree to its terms.',
+    'collection' => 'Information we collect',
+    'fifthline' => 'The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information (booking a table).
+    If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.',
+    'howuse' => 'How we use your information',
+    'sixthline' => 'We use the information we collect in various ways, including to: Communicate with you, send you emails. Find and prevent fraud. We also use your information you provide us when booking a table to track the reservations',
+    'cookies' => 'Cookies',
+    'seventhline' => 'This site uses only essential cookies. You can configure up cookie settings in your own browser',
+    'child' => "Children's information",
+    'lastline' => 'Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
+
+    Restoran & Pizzeria Šimun does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.'
 ];

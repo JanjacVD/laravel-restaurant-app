@@ -34,6 +34,7 @@ Route::get('/en', function() {
     session(['locale' => 'en']);
     return back();
 });
+Route::get('/privacy-policy', [App\Http\Controllers\PublicIndexController::class, 'privacy'])->name('public.privacy');
 
 Route::get('/menu', [App\Http\Controllers\PublicIndexController::class, 'menu'])->name('public.menu');
 

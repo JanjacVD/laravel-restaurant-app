@@ -85,4 +85,19 @@ return [
     'weRespond' => 'Pobrinut ćemo se da vam odgovorimo u što kraćem roku',
     'contactSent' => 'Vaša poruka je usjpešno poslana.',
     'sendTheShit' => 'Pošalji',
+    'pp4' => 'Politika privatnosti za',
+    'firstline' => 'U Restoran & Pizzeria Šimun, pristupačnom na http://restoran-simun.hr, jedan od glavnih prioriteta nam je privatnost naših posjetitelja. Ova politika privatnosti govori o podacima koje prikupljamo i kako ih koristimo.',
+    'secondline' => 'Ukoliko imate bilo kakvih pitanja o prikupljanju podataka, ne oklijevajte da nas kontaktirate',
+    'thirdline' => 'Ova politika privatnosti se primjenjuje samo na naše online aktivnosti i važeća je za sve posjetitelje naše stranice i podatke koje dijele sa Restoran & Pizzeria Šimun. Ova politika privatnosti nije važeća za podatke koje se prikupljaju izvan ove stranice.',
+    'conset' => 'Pristanak',
+    'fourthline' => 'Koristeći našu stranicu, prihvaćate uvjete naše politike privatnosti.',
+    'collection' => 'Podatci koje skupljamo',
+    'fifthline' => 'Podatci koje prikupljamo su oni koji vas tražimo, iz razloga koji su navedeni kad vas pitamo za te podatke (rezervacija stola), ukoliko nas kontaktirate možemo dobiti i podatke sadržaja poruke koju nam pošaljete.',
+    'howuse' => 'Kako koristimo vaše podatke.',
+    'sixthline' => 'Koristimo vaše podatke na više naćina, uključujući: Da komuniciramo s vama, šaljemo vam e-mailove. Pronađemo i spriječimo prijevaru. Također koristimo vaše podatke koje nam date rezervirajući stol da bismo zapravo pratili rezervacije',
+    'cookies' => 'Kolačići',
+    'seventhline' => 'Ova stranica koristi obavezne (tehničke) kolačiće. Postavke kolačića možete postaviti u svom vlastitom pretraživaču',
+    'child' => 'Podatci o djeci',
+    'lastline' => 'Još jedan od prioriteta je sigurnost djece dok koriste internet. Potičemo roditelje i skrbnike da prate/sudjeluju i/ili kontroliraju online aktivnost djece.
+Restoran & Pizzeria Šimun svjesno ne skuplja nikakve podatke od djece ispod 13 godina. Ukoliko mislite da je vaše dijete dalo svoje podatke, strogo vas potičemo da nas odmah kontaktirate kako bi smo ih čim prije izbrisali.'
 ];

@@ -15,7 +15,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('pending:delete')->everyFifteenMinutes()->emailOutputOnFailure('valentino.janjac@gmail.com')->runInBackground();
+        $schedule->command('dates:old')->daily()->emailOutputOnFailure('valentino.janjac@gmail.com')->runInBackground();
+        $schedule->command('auth:clear-resets')->daily()->emailOutputOnFailure('valentino.janjac@gmail.com')->runInBackground();
     }
 
     /**

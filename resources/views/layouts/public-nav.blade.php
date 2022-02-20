@@ -61,7 +61,7 @@
 			<h4 class="cookietitle">
 				{{__('messages.cookie')}}
 			</h4>
-			<p class="cookienotif">{{__('messages.cookieuse')}} <a href="">{{__('messages.findOutMore')}}</a>
+			<p class="cookienotif">{{__('messages.cookieuse')}} <a href="{{route('public.privacy')}}">{{__('messages.findOutMore')}}</a>
 			</p>
 		</div>
 		<button onclick=acceptCookies() class="cookiebtn">{{__('messages.getit')}}</button>

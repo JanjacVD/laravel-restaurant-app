@@ -13,7 +13,7 @@
             <br>
             <a href="{{route('public.contact')}}">{{__('messages.nav5')}}</a>
             ·
-            <a href="contact">{{__('messages.nav6')}}</a>
+            <a href="{{route('public.privacy')}}">{{__('messages.nav6')}}</a>
         </p>
         <p class="footer-company-name">U.O "Šimun" Vodice</p>
     </div>

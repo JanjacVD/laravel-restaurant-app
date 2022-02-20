@@ -24,7 +24,7 @@ class PublicIndexController extends Controller
     }
     public function menu()
     {
-        return view('public.menu', ['section' => SectionItem::where('active', '1')->orderBy('order','ASC',)->get(), 'category' => CategoryItem::where('active', '1')->orderBy('order','ASC',)->get(), 'food' => FoodItem::where('active', '1')->orderBy('order','ASC',)->get()]);
+        return view('public.menu', ['section' => SectionItem::where('active', '1')->orderBy('created_at','ASC')->get(), 'category' => CategoryItem::where('active', '1')->orderBy('created_at','ASC')->get(), 'food' => FoodItem::where('active', '1')->orderBy('created_at','ASC')->get()]);
     }
     public function booking()
     {
@@ -78,5 +78,9 @@ class PublicIndexController extends Controller
     public function gallery()
     {
         return view('public.gallery', ['gallery' => Gallery::where('active', '1')->orderby('order', 'ASC')->get()]);
+    }
+    public function privacy()
+    {
+        return view('public.privacy');
     }
 }
